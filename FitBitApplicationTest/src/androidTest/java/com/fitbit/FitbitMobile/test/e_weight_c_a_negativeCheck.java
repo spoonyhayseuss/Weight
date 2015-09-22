@@ -89,7 +89,7 @@ public class e_weight_c_a_negativeCheck extends ActivityInstrumentationTestCase2
         solo.clickOnView(solo.getView("add_item"));
         //Wait for activity: 'com.fitbit.weight.ui.WeightLogActivity'
         assertTrue("WeightLogActivity is not found!", solo.waitForActivity("WeightLogActivity"));
-        solo.clickOnText(java.util.regex.Pattern.quote("4"));
+        //solo.clickOnText(java.util.regex.Pattern.quote("4"));
         //Sleep
         solo.sleep(500);
 
