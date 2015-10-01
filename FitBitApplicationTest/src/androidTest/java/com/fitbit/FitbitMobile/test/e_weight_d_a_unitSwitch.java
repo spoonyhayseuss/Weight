@@ -6,7 +6,7 @@ import com.robotium.solo.Solo;
 
 
 @SuppressWarnings("rawtypes")
-public class e_weight_d_a_lbToStone extends ActivityInstrumentationTestCase2 {
+public class e_weight_d_a_unitSwitch extends ActivityInstrumentationTestCase2 {
     private Solo solo;
 
     private static final String LAUNCHER_ACTIVITY_FULL_CLASSNAME = "com.fitbit.onboarding.landing.LandingActivity";
@@ -21,7 +21,7 @@ public class e_weight_d_a_lbToStone extends ActivityInstrumentationTestCase2 {
     }
 
     @SuppressWarnings("unchecked")
-    public e_weight_d_a_lbToStone() throws ClassNotFoundException {
+    public e_weight_d_a_unitSwitch() throws ClassNotFoundException {
         super(launcherActivityClass);
     }
 
@@ -42,31 +42,31 @@ public class e_weight_d_a_lbToStone extends ActivityInstrumentationTestCase2 {
         solo.waitForActivity("LandingActivity_", 2000);
         //Sleep
         solo.sleep(500);
-        //solo.takeScreenshot("a_editWeight_a_dash");
 
-        solo.clickOnText(java.util.regex.Pattern.quote("lbs to go"));
-        //Wait for activity: 'com.fitbit.home.ui.DetailActivity_'
-        assertTrue("DetailActivity_ is not found!", solo.waitForActivity("DetailActivity_"));
-        //Sleep
+        solo.clickOnText(java.util.regex.Pattern.quote("Woohoo!"));
+        assertTrue("WeightLandingActivity is not found!", solo.waitForActivity("WeightLandingActivity"));
         solo.sleep(500);
-        //solo.takeScreenshot("a_editWeight_c_weight");
-        //Click on Empty Text View
         solo.clickOnView(solo.getView("add_item"));
         //Wait for activity: 'com.fitbit.weight.ui.WeightLogActivity'
         assertTrue("WeightLogActivity is not found!", solo.waitForActivity("WeightLogActivity"));
-        //Sleep
-        solo.sleep(1000);
-        solo.clickOnText(java.util.regex.Pattern.quote("lbs"));
-        //solo.sleep(1500);
-        solo.clickOnText(java.util.regex.Pattern.quote("stone"));
 
+        solo.clearEditText(1);
+        solo.enterText(1, "190");
 
-        //Click on LOG IT
-        solo.clickOnView(solo.getView("log_button"));
-        solo.sleep(500);
+        solo.clickOnText("lbs");
+        solo.clickOnText("stone");
 
+        solo.clickOnText("12");
+        solo.clickOnText("13");
+        solo.clickOnText("8 lbs");
+        solo.clickOnText("stone");
+        solo.clickOnText("kg");
+        solo.clickOnText("12");
+        solo.clickOnText("86.2");
+        solo.clickOnText("kg");
+        solo.clickOnText("lbs");
+        solo.clickOnView(solo.getView("menu_save"));
 
-        solo.goBack();
 
 
     }

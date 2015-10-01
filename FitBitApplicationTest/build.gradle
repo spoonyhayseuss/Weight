@@ -53,7 +53,7 @@ android {
 task assembleDebug(overwrite: true) {}
 
 task copyTask(type: Copy) {
-    from '/Users/aaronwitherspoon/Master_449_0928.apk'
+    from '/Users/aaronwitherspoon/FitbitAndroid-2.12-v2729_debug.apk'
     into 'build/outputs/apk/'
     rename {
         'FitBitApplicationTest-debug.apk'
