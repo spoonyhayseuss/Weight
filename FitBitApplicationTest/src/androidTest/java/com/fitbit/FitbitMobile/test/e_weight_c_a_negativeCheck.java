@@ -9,7 +9,7 @@ import com.robotium.solo.Solo;
 public class e_weight_c_a_negativeCheck extends ActivityInstrumentationTestCase2 {
     private Solo solo;
 
-    private static final String LAUNCHER_ACTIVITY_FULL_CLASSNAME = "com.fitbit.onboarding.landing.LandingActivity_";
+    private static final String LAUNCHER_ACTIVITY_FULL_CLASSNAME = "com.fitbit.onboarding.landing.LandingActivity";
 
     private static Class<?> launcherActivityClass;
     static{
@@ -45,7 +45,7 @@ public class e_weight_c_a_negativeCheck extends ActivityInstrumentationTestCase2
         //solo.takeScreenshot("a_editWeight_a_dash");
 
         //tap lbs to go -- user has Food Plan
-        solo.clickOnText(java.util.regex.Pattern.quote("Woohoo"));
+        solo.clickOnText(java.util.regex.Pattern.quote("Woohoo!"));
         //Wait for activity: 'com.fitbit.home.ui.DetailActivity_'
         assertTrue("DetailActivity_ is not found!", solo.waitForActivity("DetailActivity_"));
         //Sleep

@@ -1,7 +1,6 @@
 package com.fitbit.FitbitMobile.test;
 
 import android.test.ActivityInstrumentationTestCase2;
-import android.test.suitebuilder.annotation.SmallTest;
 
 import com.robotium.solo.Solo;
 
@@ -10,7 +9,7 @@ import com.robotium.solo.Solo;
 public class e_weight_b_b_setWeight200 extends ActivityInstrumentationTestCase2 {
     private Solo solo;
 
-    private static final String LAUNCHER_ACTIVITY_FULL_CLASSNAME = "com.fitbit.onboarding.landing.LandingActivity_";
+    private static final String LAUNCHER_ACTIVITY_FULL_CLASSNAME = "com.fitbit.onboarding.landing.LandingActivity";
 
     private static Class<?> launcherActivityClass;
     static{
@@ -37,15 +36,13 @@ public class e_weight_b_b_setWeight200 extends ActivityInstrumentationTestCase2 
         solo.finishOpenedActivities();
         super.tearDown();
     }
-    @SmallTest
+    //@SmallTest
     public void testRun() {
         //Wait for activity: 'com.fitbit.onboarding.landing.LandingActivity_'
         solo.waitForActivity("LandingActivity_", 2000);
-        //Sleep
-        solo.sleep(500);
-        //Click BURGER
+
         solo.clickOnView(solo.getView(android.widget.ImageButton.class, 0));
-        //Sleep
+
         solo.sleep(500);
         //Click on Account
         solo.clickInList(4, 2);
@@ -54,13 +51,9 @@ public class e_weight_b_b_setWeight200 extends ActivityInstrumentationTestCase2 
         //Sleep
         solo.sleep(500);
         solo.clickOnText(java.util.regex.Pattern.quote("SETTINGS"));
-        solo.sleep(500);
+
 
         solo.clickOnText(java.util.regex.Pattern.quote("Edit Your Profile"));
-
-        //solo.clickOnView(solo.getView("activity"));
-        //Wait for activity: 'com.fitbit.settings.ui.GoalsActivity'
-        //assertTrue("GoalsActivity is not found!", solo.waitForActivity("GoalsActivity"));
 
         solo.sleep(500);
 
@@ -68,12 +61,6 @@ public class e_weight_b_b_setWeight200 extends ActivityInstrumentationTestCase2 
         solo.enterText(4, "200");
 
         solo.clickOnView(solo.getView("profile_save"));
-
-
-
-
-
-
 
     }
 }
